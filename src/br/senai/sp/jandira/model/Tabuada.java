@@ -13,11 +13,13 @@ public class Tabuada {
 		this.multiplicando = Integer.parseInt(multiplicando);
 	}
 
-	public void Multiplicar() {
+	public void CalcularTabuada() {
 		for (int contador = 0; multiplicador > contador; contador++) {
 			int resultado = multiplicando * contador;
 
 			System.out.printf("%s X %d = %d\n", contador, multiplicando, resultado);
+			
+			
 
 		}
 	}

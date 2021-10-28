@@ -1,16 +1,13 @@
 package br.senai.sp.jandira.app;
 
-import br.senai.sp.jandira.model.Tabuada;
+import br.senai.sp.jandira.ui.Tela;
 
 public class App {
 
 	public static void main(String[] args) {
 		
-		Tabuada tabuada = new Tabuada();
-		tabuada.setMultiplicador("3");
-		tabuada.setMultiplicando("5");
-		tabuada.Multiplicar();
-
+		Tela tela = new Tela();
+		tela.CriarTela();
 	}
 
 }
