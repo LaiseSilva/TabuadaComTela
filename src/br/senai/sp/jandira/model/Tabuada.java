@@ -13,19 +13,20 @@ public class Tabuada {
 		this.multiplicando = Integer.parseInt(multiplicando);
 	}
 
-	public void CalcularTabuada() {
-
+	public String[] CalcularTabuada() {
 		
+		String tabuada[] = new String[multiplicador + 1];
 
-		for (int contador = 0; this.multiplicador> contador; contador++) {
-			 int resultado = this.multiplicando * contador;
-
-
-			System.out.printf("%s X %d = %d\n", contador, this.multiplicando, resultado);
+		for (int index = 0; this.multiplicador >= index; index++) {
+			 int resultado = this.multiplicando * index;
+			 
+			 tabuada[index] = multiplicando + " X " + index + " = " + resultado;
 
 		}
+		return tabuada;
+		
 		
 
 	}
-
+	
 }
