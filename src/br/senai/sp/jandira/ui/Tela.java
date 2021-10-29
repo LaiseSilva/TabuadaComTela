@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -18,6 +19,10 @@ import br.senai.sp.jandira.model.Tabuada;
 public class Tela {
 	
 	public void CriarTela() {
+		
+		
+		Color bntCalcularCor = new Color(0,255,0);
+		Color bntLimparCor = new Color(255,0,0);
 		
 		
 		JFrame minhaTela = new JFrame();
@@ -45,19 +50,25 @@ public class Tela {
 		
 		JButton bntCalcular = new JButton("Calcular");
 		bntCalcular.setBounds(20, 200, 175, 45);
+		bntCalcular.setBackground(bntCalcularCor);
+		bntCalcular.setForeground(Color.WHITE);
 		
 		
 		JButton bntLimpar = new JButton("Limpar");
 		bntLimpar.setBounds(20, 260, 175, 45);
+		bntLimpar.setBackground(bntLimparCor);
+		bntLimpar.setForeground(Color.WHITE);
 		
 		JLabel lblResultado = new JLabel("Resultado:");
 		lblResultado.setBounds(235, 110, 80, 20);
+		lblResultado.setForeground(Color.BLUE);
 		
 		JScrollPane scroll = new JScrollPane();
 		scroll.setBounds(235, 130, 135, 175);
 		
 		DefaultListModel resultadoModelo = new DefaultListModel();
-		resultadoModelo.addElement("");
+		resultadoModelo.addElement(" ");
+		
 		
 		JList TabuadaList = new JList(resultadoModelo);
 		scroll.getViewport().add(TabuadaList);
@@ -83,6 +94,9 @@ public class Tela {
 				tabuada.setMultiplicador(txtMaximoMultiplicador.getText());
 				tabuada.setMultiplicando(txtMultiplicando.getText());
 				
+				resultadoModelo.addElement( tabuada.CalcularTabuada());
+				
+				
 				
 			}
 		});
@@ -91,6 +105,8 @@ public class Tela {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				resultadoModelo.removeAllElements();
 				
 				
 			}
