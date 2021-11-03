@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.DefaultListModel;
-
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -23,6 +23,7 @@ public class Tela {
 
 		Color bntCalcularCor = new Color(156, 197, 35);
 		Color bntLimparCor = new Color(255, 0, 0);
+		ImageIcon iconeCalculadora = new ImageIcon((getClass().getResource("/br/senai/sp/jandira/images/calculadora.png")));
 
 		JFrame minhaTela = new JFrame();
 		minhaTela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,6 +42,10 @@ public class Tela {
 		lblTitulo.setForeground(Color.BLUE);
 		lblTitulo.setBounds(150, 10, 200, 50);
 		header.add(lblTitulo);
+		
+		JLabel lblIcone = new JLabel(iconeCalculadora);
+		lblIcone.setBounds(250, -35, 100, 150);
+		header.add(lblIcone);
 
 		JLabel lblMultiplicando = new JLabel("Multiplicando:");
 		lblMultiplicando.setBounds(65, 110, 80, 20);
